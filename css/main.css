@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
+
+body, *, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --bg-purple: radial-gradient(circle, rgba(97,96,142,1) 0%, rgba(65,64,100,1) 100%);
+  --bg-white: rgb(240, 237, 237);
+  --box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  --box-shadow-hover: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  --blue-light: radial-gradient(circle, rgba(97,96,142,1) 0%, rgba(21,1,29,0.9304096638655462) 100%);
+  --aqua: aqua;
+  --red-light: rgb(235, 64, 115);
+  --border-main-radius: 15px;
+}
+body {
+  background: var(--bg-purple);
+  font-family: 'Montserrat', sans-serif;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.container {
+  max-width: 90%;
+  width: 1400px;
+  background-color: var(--bg-white);
+  padding: 1.5rem;
+  border-radius: var(--border-main-radius);
+  box-shadow: 4px 3px 9px -1px rgba(0,0,0,0.46);
+  margin: 2rem 0;
+}
+.sort {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  background-color: rgb(231, 229, 229);
+  padding: 0.3rem;
+  border-radius: var(--border-main-radius);
+}
+.sort__title {
+  margin: 0;
+  color: var(--bg-purple);
+  margin-left: 1rem;
+  flex-grow: 1;
+}
+.history_page_btn {
+  text-decoration: none;
+  margin-right: 2rem;
+  font-family: inherit;
+  font-size: 1.25rem;
+  color: var(--bg-purple)
+}
+.sort__btn {
+  text-decoration: none;
+  margin-right: 1rem;
+  cursor: pointer;
+  font-size: .9rem;
+  background-color: var(--red-light);
+  color: var(--bg-white);
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: var(--border-main-radius);
+  transition: all .3s ease-out;
+}
+.sort__btn:hover {
+  background: rgb(192, 7, 78);
+}
+.sort__btn:focus {
+  outline: none;
+}
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: var(--blue-light);
+  width: 300px;
+  margin-bottom: 2rem;
+  border-radius: var(--border-main-radius);
+  box-shadow: var(--box-shadow);
+  border: none;
+  transition: box-shadow .1s ease-in;
+  cursor: pointer;
+  color: var(--bg-white);
+  text-align: left;
+}
+
+.card:hover {
+  box-shadow: var(--box-shadow-hover);
+}
+
+.card__imgContainer {
+  width: 100%;
+  padding-top: 1.3rem;
+  height: 400px;
+  overflow: hidden;
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.card__info {
+  margin: .7rem 1.4rem;
+}
+.card__title {
+  word-wrap: break-word;
+  letter-spacing: .2rem;
+  font-size: 1.3rem;
+  margin-bottom: .5rem;
+}
+
+.card__priceName {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card__cost {
+  display: inline-block;
+  margin-left: .3rem;
+  font-size: 1rem;
+  color: var(--aqua);
+}
+
+.card__btn {
+  background-color: transparent;
+  color: var(--bg-white);
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: left;
+  transition: color .3s ease-in-out;
+}
+.card__btn:hover {
+  color: var(--red-light);
+}
+
+@media only screen
+  and (device-width : 375px)
+  and (device-height : 812px)
+  and (-webkit-device-pixel-ratio : 3) {
+    .cards {
+      flex-direction: column;
+    }
+
+  }
